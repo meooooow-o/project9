@@ -9,7 +9,10 @@ public class ScoringFile {
         try {
             FileReader fileReader = new FileReader("score.txt");
             int data = fileReader.read();
-            System.out.println(data);
+            while(data != -1){
+                System.out.print((char)data);
+                data = fileReader.read();
+            }
         }catch(IOException e){
             System.out.println("檔案讀取失敗");
         }
